@@ -21,3 +21,5 @@ user manual
 Design document
 
 makefile
+
+Add some Flags to the begining of the code
