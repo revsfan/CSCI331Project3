@@ -5,17 +5,17 @@ ToDo
 
 impliment strings DONE
 
-Better way to write to a file
+Better way to write to a file DONE
 
-Delete records
+Delete records DONE
 
-insert records
+insert records DONE
 
 test consistency and rebuild tree if need be
 
-break up into seperate files(different classes)
+break up into seperate files(different classes) NOT NEEDED
 
-Deoxygen(into files)
+Deoxygen(into files) 
 
 user manual
 
