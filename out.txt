@@ -3,9 +3,6 @@ Enter number of values per node:
 [ls ]  
 [Am Et Pm aF je ]  [ls qI sf xZ ]  
 
-
-
-
 Am
 Et
 Pm

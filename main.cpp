@@ -1,4 +1,11 @@
-#define MAXSIZE 150 //number of duplicate records in a node
+/**
+*   @file main.cpp
+*   This program is a simple B+ Tree program. The program can either read a file that contains strings or ints OR
+*   the user can enter strings or ints into the tree manually.
+*/
+
+
+#define MAXSIZE 150 /** < Max number of records */
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
@@ -6,13 +13,22 @@
 #include <conio.h>
 
 
+
+
 using namespace std;
 
 class node; //class declaration
 node *position,*recordPosition; //node variables
 
+std::ofstream mount("out.txt"); /** < Output file */
+
+
 
 //leaf that will store the key
+/**
+*   A struct that is a record. This contains a pointer to a left and right node.
+*   There are two fields depending if the keys are strings or integers.
+*/
 struct record{
 
   node *left;
@@ -23,41 +39,94 @@ struct record{
 };
 
 //node class that will store a pointer to either another node or a record (leaf)
+/**
+*   Node class that will store a pointer to either another node or a record (leaf).
+*/
 class node{
 
 public:
 
-  int numberOfKeys;
+  int numberOfKeys; /** < Keeps track of the number of keys */
 
-  record data[MAXSIZE];
+  record data[MAXSIZE]; /** < Array of records */
 
   node *parent;
   node *first;
   node *next;
 
-  int isLeaf; // 1 True 0 False
+  int isLeaf; /** < 1 = True */ // 1 True 0 False
 
+  /**
+  * Default node constructor.
+  */
   node();
 
   //Puts a record in a node
+  /**
+  * Inserts a record in a node that has a key that is of type int.
+  * @param record value A record.
+  * @return void
+  */
   void nodeInsert(record value);
+
+  /**
+  * Inserts a record in a node that has a key that is of type string.
+  * @param record value A record.
+  * @return void
+  */
   void stringNodeInsert(record value);
 
   //Split nodes when there is no more room
+  /**
+  * Splits a node when there is no more room to add a record. This is for only keys that are of type int.
+  * @param record value A record.
+  * @return record Returns the new record that was created as a result of the split.
+  */
   record splitNode(record value);
+
+  /**
+  * Splits a node when there is no more room to add a record. This is for only keys that are of type string.
+  * @param record value A record.
+  * @return record Returns the new record that was created as a result of the split.
+  */
   record stringSplitNode(record value);
 
   //split parents nodes
+  /**
+  * Splits the parent. This is only for keys that are of type int.
+  * @param record value A record
+  * @return record Returns the new record that was created as a result of the split.
+  */
   record splitParent(record value);
+
+  /**
+  * Splits the parent. This is only for keys that are of type string.
+  * @param record value A record
+  * @return record Returns the new record that was created as a result of the split.
+  */
   record stringSplitParent(record value);
 
   node *nextindex(int value);
   node *stringNextindex(string value);
 
+  /**
+  * Displays the tree structure visually. This will only display the tree structure for keys of type int.
+  */
   void display();
+
+  /**
+  * Displays the tree structure visually. This will only display the tree structure for keys of type string.
+  */
   void stringDisplay();
 
+  /**
+  * Displays the values of the keys. This will only display the values for keys of type int.
+  */
   void displayval();
+
+  /**
+  * Displays the values of the keys. This will only display the values for keys of type string.
+  */
   void stringDisplayval();
 
 }; //END NODE CLASS
@@ -134,15 +203,18 @@ class Queue
 
 
 //Main structure of the b+ tree
+/**
+*   B+ tree class. Contains the whole tree structure including functionalities with respect to the tree.
+*/
 class bPTree{
 
 
-  int mkeys;
+  int mkeys; /** < Max number of keys per node */
 
   node *root;
 
-  int keys[100];//can change this to whatever
-  string stringKeys[100];
+  int keys[100]; /** Max number of keys of type int*/ //can change this to whatever
+  string stringKeys[100]; /** Max number of keys of type string*/
   int totalNumberOfKeys;
 
     public:
@@ -155,47 +227,90 @@ class bPTree{
           }
 
           //Inserts value into tree
+          /**
+          * Inserts a key of type int into the tree.
+          * @param int value A key.
+          * @return void
+          */
+
           void insert(int value);
+
+          /**
+          * Inserts a key of type string into the tree.
+          * @param string value A key.
+          * @return void
+          */
           void stringInsert(string value);
 
 
           //bool checkindex(int value,int choice);
 
           //display tree
+          /**
+          * Display the tree structure with keys of type int.
+          */
           void showTree();
+
+          /**
+          * Display the tree structure with keys of type string.
+          */
           void stringShowTree();
 
           //goes through the tree to display all of the values
+          /**
+          * Display all of the key values of type int.
+          */
           void listValues();
+
+          /**
+          * Display all of the key values of type int.
+          */
           void stringListValues();
 
 
 
 
           // deletes a value from the tree
+          /**
+          * Removes a key of type int from the tree.
+          * @param int value The key to be removed from the tree.
+          */
           void Delete(int value);
+
+          /**
+          * Removes a key of type string from the tree.
+          * @param string value The key to be removed from the tree.
+          */
           void stringDelete(string value);
 };
 
 void node::display()
 {
 
+  mount << "[";
   cout << "[";
 
-  for(int i = 0; i < numberOfKeys; i++)
-    cout<<data[i].key<<" ";
+  for(int i = 0; i < numberOfKeys; i++){
+    mount << data[i].key << " ";
+    cout << data[i].key << " ";
+  }
 
-  cout<<"]";
+  mount << "]";
+  cout << "]";
 }
 
 void node::stringDisplay()
 {
 
+  mount << "[";
   cout << "[";
 
-  for(int i = 0; i < numberOfKeys; i++)
-    cout << data[i].stringKey <<" ";
+  for(int i = 0; i < numberOfKeys; i++){
+    mount << data[i].stringKey << " ";
+    cout << data[i].stringKey << " ";
+  }
 
+  mount << "]";
   cout << "]";
 }
 
@@ -205,16 +320,20 @@ void node::stringDisplay()
 void node::displayval()
 {
 
-  for(int i = 0;i < numberOfKeys; i++)
+  for(int i = 0; i < numberOfKeys; i++){
+    mount << data[i].key << endl;
     cout << data[i].key << endl;
+  }
 }
 
 
 void node::stringDisplayval()
 {
 
-  for(int i = 0;i < numberOfKeys; i++)
+  for(int i = 0;i < numberOfKeys; i++){
+    mount << data[i].stringKey << endl;
     cout << data[i].stringKey << endl;
+  }
 }
 
 
@@ -288,7 +407,7 @@ void node::nodeInsert(record value)
 {
     int i = numberOfKeys - 1;
     for(i ; i >= 0 && data[i].key > value.key; i--)
-    data[i + 1] = data[i];
+        data[i + 1] = data[i];
 
     data[i + 1] = value;
     data[i + 1].left = value.left;
@@ -305,7 +424,7 @@ void node::stringNodeInsert(record value)
 {
     int i = numberOfKeys - 1;
     for(i ; i >= 0 && data[i].stringKey > value.stringKey; i--)
-    data[i + 1] = data[i];
+        data[i + 1] = data[i];
 
     data[i + 1] = value;
     data[i + 1].left = value.left;
@@ -621,11 +740,14 @@ void bPTree::showTree()
   while( !queue1.empty() ){
 
      queue2.makeEmpty();
+     mount << endl;
      cout << endl;
+
      while( !queue1.empty() ){
 
       currentNode = queue1.deque();
       currentNode-> display();
+      mount << "  ";
       cout << "  ";
 
       if( !currentNode-> isLeaf ){
@@ -661,11 +783,14 @@ void bPTree::stringShowTree()
   while( !queue1.empty() ){
 
      queue2.makeEmpty();
+     mount << endl;
      cout << endl;
+
      while( !queue1.empty() ){
 
       currentNode = queue1.deque();
       currentNode-> stringDisplay();
+      mount << "  ";
       cout << "  ";
 
       if( !currentNode-> isLeaf ){
@@ -702,6 +827,7 @@ void bPTree::listValues()
 
     q2.makeEmpty();
 
+    mount << "\n";
     cout << "\n";
 
     while(!q1.empty()){
@@ -743,6 +869,7 @@ void bPTree::stringListValues()
 
     q2.makeEmpty();
 
+    mount << "\n";
     cout << "\n";
 
     while(!q1.empty()){
@@ -1437,12 +1564,29 @@ void bPTree::stringDelete(string value){
 
 
 
-int main(int argc, char **argv){
 
-    freopen("out.txt","w",stdout); //steals cout stream and writes it to file. This will cause the console to not display anything but will function correctly
 
-  int number; //size of block
-    string value;// key value
+int main(int argc, char* argv[]){
+
+
+  int number; /** < Size of a block */ //size of block
+  int intValue; /** < A key value of type int */
+  string stringValue; /** < A key value of type string */ // key value
+
+
+
+//ARG EXECUTION AREA
+
+//string with input file
+if(argc == 3){
+
+    if(argv[0] == 's')
+
+}
+
+
+
+
 
 
 
@@ -1451,6 +1595,7 @@ int main(int argc, char **argv){
   ifstream inputFile;
 
 
+  mount << "Enter number of values per node: " << endl;
   cout << "Enter number of values per node: " << endl;
   cin >> number;
 
