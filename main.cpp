@@ -1,5 +1,7 @@
 /**
 *   @file main.cpp
+*   @date
+*   @author
 *   This program is a simple B+ Tree program. The program can either read a file that contains strings or ints OR
 *   the user can enter strings or ints into the tree manually.
 */
@@ -11,9 +13,14 @@
 #include <cstring>
 #include <fstream>
 #include <conio.h>
+#include <stdlib.h>
 
 
-
+/**
+*   Displays a menu for different options for different operations on the tree.
+*   @return void
+*/
+void menu();
 
 using namespace std;
 
@@ -33,8 +40,8 @@ struct record{
 
   node *left;
   node *right;
-  int key;
-  string stringKey;
+  int key; /** < holds a key of type integer */
+  string stringKey; /** < holds a key of type string */
 
 };
 
@@ -1573,6 +1580,9 @@ int main(int argc, char* argv[]){
   int intValue; /** < A key value of type int */
   string stringValue; /** < A key value of type string */ // key value
 
+//  char intInFile[16];
+//  char stringInFile[16];
+
 
 
 //ARG EXECUTION AREA
@@ -1580,51 +1590,313 @@ int main(int argc, char* argv[]){
 //string with input file
 if(argc == 3){
 
-    if(argv[0] == 's')
+    if(argv[1][1] == 's'){ //if the input file is of type string
+
+        ifstream stringInFile( argv[2]);
+        cout << "String file opened successfully \n\n";
+        mount << "String file opened successfully \n\n";
+
+        cout << "Enter the number of values per block: " << endl;
+        mount << "Enter the number of values per block: " << endl;
+
+        cin >> number;
+
+        cout << "Number of values per block have been set to: " << number << endl;
+        mount << "Number of values per block have been set to: " << number << endl;
+
+        bPTree bPlusTree(number);
+
+        cout << "Loading keys into the tree...\n\n";
+        mount << "Loading keys into the tree...\n\n";
+
+        while(inputFile >> stringValue){
+            bPlusTree.stringInsert(stringValue); // only need stringValue
+        }
+
+        cout << "The B+ tree has been created.\n\n";
+        mount << "The B+ tree has been created.\n\n";
+    }
+
+
+    if(argv[1][1] == 'i'){ //if the input file is of type int
+
+        ifstream intIntFile( argv[2]);
+        cout << "Integer file opened successfully \n\n";
+        mount << "Integer file opened successfully \n\n";
+
+        cout << "Enter the number of values per block: " << endl;
+        mount << "Enter the number of values per block: " << endl;
+
+        cin >> number;
+
+        cout << "Number of values per block have been set to: " << number << endl;
+        mount << "Number of values per block have been set to: " << number << endl;
+
+        bPTree bPlusTree(number);
+
+        cout << "Loading keys into the tree...\n\n";
+        mount << "Loading keys into the tree...\n\n";
+
+        while(inputFile >> intValue){
+            bPlusTree.insert(intValue); // only need intValue
+        }
+
+        cout << "The B+ tree has been created.\n\n";
+        mount << "The B+ tree has been created.\n\n";
+
+
+        }
+
+
 
 }
 
 
 
+if(argc == 5){ //load 2 files one of type string other of type int. This is for testing mostly. The key types cant mix into one tree.
+
+
+        //load 2 files
+
+        ifstream stringInFile( argv[2]); //string file
+        cout << "String file opened successfully \n\n";
+        mount << "String file opened successfully \n\n";
+
+        ifstream intIntFile( argv[4]); //int file
+        cout << "Integer file opened successfully \n\n";
+        mount<< "Integer file opened successfully \n\n";
+
+
+
+        //make and load the values for a string tree
+        bPTree bPlusTreeString(number);
+
+        cout << "Loading string keys into the tree...\n\n";
+        mount << "Loading string keys into the tree...\n\n";
+
+        while(inputFile >> stringValue){
+            bPlusTreeString.stringInsert(stringValue); // only need stringValue
+        }
+
+        cout << "The B+ tree has been created using keys of type string.\n\n";
+        mount << "The B+ tree has been created using keys of type string.\n\n";
 
 
 
 
+        //make and load the values for a int tree
+
+        bPTree bPlusTreeInt(number);
+
+        cout << "Loading integer keys into the tree...\n\n";
+        mount << "Loading integer keys into the tree...\n\n";
+
+        while(inputFile >> intValue){
+            bPlusTreeInt.insert(intValue); // only need intValue
+        }
+
+        cout << "The B+ tree has been created using keys of type int.\n\n";
+        mount << "The B+ tree has been created using keys of type int.\n\n";
+
+        char choice = '0';
+        int treeChoice = -1;
+
+        while (treeChoice < 3){
 
 
-  ifstream inputFile;
+
+        cout << "Which tree (string/integer) would you like to edit?\n";
+        mount << "Which tree (string/integer) would you like to edit?\n";
+
+        cout << "1. String tree\n2. Integer tree\n3. Exit program\n";
+        mount << "1. String tree\n2. Integer tree\n3. Exit program\n";
+
+        cin >> treeChoice;
+
+        if(treeChoice == 3){ //quit the program
+
+            exit(EXIT_SUCCESS);
+        }
 
 
-  mount << "Enter number of values per node: " << endl;
-  cout << "Enter number of values per node: " << endl;
-  cin >> number;
+            if(treeChoice == 1){ //string tree
+
+                while(choice < '5'){
+
+                menu(); //displays the menu
+
+                cin >> choice;
+
+                    switch(choice){
+
+                        //adding a record
+                        case '1':   cout << "What is the string key you would like to add: \n";
+                                    mount << "What is the string key you would like to add: \n";
+                                    string value;
+                                    cin >> value;
+
+                                    bPlusTreeString.stringInsert(value);
+                                    cout << "Key has been added\n\n";
+                                    mount << "Key has been added\n\n";
+                                    break;
+
+                        //deleting a record
+                        case '2':   cout << "What is the string key you would like to delete: \n";
+                                    mount << "What is the string key you would like to delete: \n";
+                                    string value;
+                                    cin >> value;
+
+                                    bPlusTreeString.stringDelete(value);
+                                    cout << "Key has been deleted from the tree\n\n";
+                                    mount << "Key has been deleted from the tree\n\n";
+                                    break;
+
+                        //show tree
+                        case '3':   bPlusTreeString.stringShowTree();
+                                    break;
+
+                        //list values
+                        case '4':   bPlusTreeString.stringListValues();
+                                    break;
+
+                        //go back to the other menu
+                        case '5':   //exit(EXIT_SUCCESS);
+                                    break;
+
+                        //ERROR
+                        default:    cout << "Something went wrong...";
+                                    mount << "Something went wrong...";
+                                    exit(EXIT_FAILURE);
+                    }
+
+
+                }
+
+             //END IF TREECHOICE == 1
+
+            }else{ //else TREECHOICE == 2 (ints)
+
+                while(choice < '5'){
+
+                menu(); //displays the menu
+
+                cin >> choice;
+
+                    switch(choice){
+
+                        //adding a record
+                        case '1':   cout << "What is the int key you would like to add: \n";
+                                    mount << "What is the int key you would like to add: \n";
+                                    int value;
+                                    cin >> value;
+
+                                    bPlusTreeInt.insert(value);
+                                    cout << "Key has been added\n\n";
+                                    mount << "Key has been added\n\n";
+                                    break;
+
+                        //deleting a record
+                        case '2':   cout << "What is the int key you would like to delete: \n";
+                                    mount << "What is the int key you would like to delete: \n";
+                                    int value;
+                                    cin >> value;
+
+                                    bPlusTreeInt.Delete(value);
+                                    cout << "Key has been deleted from the tree\n\n";
+                                    mount << "Key has been deleted from the tree\n\n";
+                                    break;
+
+                        //show tree
+                        case '3':   bPlusTreeInt.showTree();
+                                    break;
+
+                        //list values
+                        case '4':   bPlusTreeInt.listValues();
+                                    break;
+
+                        //go back to the other menu
+                        case '5':   //exit(EXIT_SUCCESS);
+                                    break;
+
+                        //ERROR
+                        default:    cout << "Something went wrong...";
+                                    mount << "Something went wrong...";
+                                    exit(EXIT_FAILURE);
+                    }
+
+
+                }
+
+            }//END ELSE
 
 
 
 
-  bPTree bPlusTree(number);
+        }//END WHILE
+
+}//END ARGC == 5
+
+
+if(argc == 2){
 
 
 
-    //OPEN FILE
+}
 
-      inputFile.open("test.txt");
-
-
-      while(inputFile >> value){
-        bPlusTree.stringInsert(value); // only need value
-      }
-
-
-bPlusTree.stringShowTree();
-
-cout << endl << endl << endl;
-
-bPlusTree.stringListValues();
-
-getch();
-
-inputFile.close();
+//
+//
+//  ifstream inputFile;
+//
+//
+//  mount << "Enter number of values per node: " << endl;
+//  cout << "Enter number of values per node: " << endl;
+//  cin >> number;
+//
+//
+//
+//
+//  bPTree bPlusTree(number);
+//
+//
+//
+//    //OPEN FILE
+//
+//      inputFile.open("test.txt");
+//
+//
+//      while(inputFile >> value){
+//        bPlusTree.stringInsert(value); // only need value
+//      }
+//
+//
+//bPlusTree.stringShowTree();
+//
+//cout << endl << endl << endl;
+//
+//bPlusTree.stringListValues();
+//
+//getch();
+//
+//inputFile.close();
 
   return 0;
+}
+
+
+void menu(){
+
+
+    cout << "What would you like to do?" << endl << endl;
+    mount << "What would you like to do?" << endl << endl;
+
+    cout << "1. Add record\n" << "2. Delete record\n" << "3. Show tree\n" << "4. List values\n" << "5. Go back to the previous menu\n";
+    mount << "1. Add record\n" << "2. Delete record\n" << "3. Show tree\n" << "4. List values\n" << "5. Go back to the previous menu\n";
+
+
+}
+
+void helpMenu(){
+
+    cout << "List of different arguments: \n\n";
+    cout << "-s <filename> Loads a file  "
 }
