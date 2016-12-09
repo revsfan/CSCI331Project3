@@ -6,9 +6,9 @@
 
 
 CXX = g++	
-CXXFLAGS = -t
+CXXFLAGS = -std=c++0X
 
 
 main: main.cpp Queue.h bPTree.h node.h shared.h	
 
-$(CXX)	$(CXXFLAGS) -o main main.o Queue.o bPTree.o node.o shared.o
+$(CXX)	$(CXXFLAGS) -o main main.o 
