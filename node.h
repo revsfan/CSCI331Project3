@@ -16,10 +16,17 @@
 #include "shared.h"
 //#include "record.h"
 using namespace std;
+
+class node;
+  node *position, *recordPosition; //node variables
+
 class node{
 
 public:
 
+/**
+* Struct that is a record which holds a key (either int or string) and a left and right pointer to the next record.
+*/
  struct record{
 
   node *left;

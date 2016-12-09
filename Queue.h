@@ -4,6 +4,10 @@
 
 #include "node.h"
 //Go through tree nodes
+
+/**
+* A queue class that stores nodes
+*/
 class Queue
 {
   node *data[100]; //
@@ -14,6 +18,9 @@ class Queue
 
     public:
 
+        /**
+        *   Default Queue class constructor initializes the head and tail position to 0.
+        */
       Queue(){ //default constructor
 
         Tail = 0;
@@ -21,7 +28,9 @@ class Queue
 
       }
 
-
+        /**
+        *   checks if the Queue is empty. 1 True
+        */
       int empty(){
 
         if(Tail == Head){
@@ -34,7 +43,10 @@ class Queue
         }
       }
 
-
+    /**
+    *   Returns a pointer to the head of the data array which contains nodes
+    *   @return node A pointer to the head of the data array which contains nodes
+    */
       node *deque(){
 
         return data[Head++];
@@ -45,6 +57,9 @@ class Queue
         data[Tail++] = value;
       }
 
+        /**
+        * Sets the head and tail to position 0
+        */
       void makeEmpty(){
 
         Tail = 0;
