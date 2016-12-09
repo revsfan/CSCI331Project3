@@ -14,7 +14,8 @@
 /**
 *   B+ tree class. Contains the whole tree structure including functionalities with respect to the tree.
 */
-class bPTree{
+class bPTree
+{
 
 
   int mkeys; /** < Max number of keys per node */
@@ -28,7 +29,8 @@ class bPTree{
     public:
     	
 
-          bPTree(int n){
+          bPTree(int n)
+		  {
 
             mkeys = n;
             root = NULL;
@@ -42,8 +44,8 @@ class bPTree{
           * @return void
           */
 
-          void insert(int value)
-          {
+void insert(int value)
+{
 
 
   node::record newRecord;
@@ -56,12 +58,15 @@ class bPTree{
 
   newRecord.left = NULL;
   newRecord.right = NULL;
-  if(root == NULL){
+  if(root == NULL)
+  {
 
     root = new node;
     root-> nodeInsert(newRecord);
 
-  }else{
+  }
+  else
+  {
 
     currentNode = root;
     while( !(currentNode-> isLeaf) )
@@ -70,22 +75,28 @@ class bPTree{
     if(currentNode-> numberOfKeys < mkeys)
       currentNode-> nodeInsert(newRecord);
 
-    else{
+    else
+	{
 
-      if(currentNode-> isLeaf){
+      if(currentNode-> isLeaf)
+	  {
 
         newRecord = currentNode-> splitNode(newRecord);
         currentNode-> isLeaf = 1;
 
-      }else{
+      }
+	  else
+	  {
 
         newRecord = currentNode-> splitParent(newRecord);
         currentNode-> isLeaf = 0;
       }
 
-      while(1){
+      while(1)
+	  {
 
-        if(currentNode == root){
+        if(currentNode == root)
+		{
 
           temp = new node;
           temp-> data[0] = newRecord;
@@ -101,26 +112,34 @@ class bPTree{
           temp-> data[0].left-> parent = temp;
           return;
 
-        }else{
+        }
+		else
+		{
 
           currentNode = currentNode-> parent;
 
           if(currentNode-> data[0].left != NULL)
             currentNode-> isLeaf = 0;
 
-          if(currentNode-> numberOfKeys < mkeys){
+          if(currentNode-> numberOfKeys < mkeys)
+		  {
 
             currentNode-> nodeInsert(newRecord);
             return;
 
-          }else{
+          }
+		  else
+		  {
 
-            if(currentNode-> isLeaf){
+            if(currentNode-> isLeaf)
+			{
 
               newRecord = currentNode-> splitNode(newRecord);
               currentNode-> isLeaf = 1;
 
-            }else{
+            }
+			else
+			{
 
               newRecord = currentNode-> splitParent(newRecord);
               currentNode-> isLeaf = 0;
@@ -141,8 +160,8 @@ class bPTree{
           * @param string value A key.
           * @return void
           */
-          void stringInsert(string value)
-          {
+void stringInsert(string value)
+{
 
 
   node::record newRecord;
@@ -155,12 +174,15 @@ class bPTree{
 
   newRecord.left = NULL;
   newRecord.right = NULL;
-  if(root == NULL){
+  if(root == NULL)
+  {
 
     root = new node;
     root-> stringNodeInsert(newRecord); //stringNodeInsert
 
-  }else{
+  }
+  else
+  {
 
     currentNode = root;
     while( !(currentNode-> isLeaf) )
@@ -169,22 +191,28 @@ class bPTree{
     if(currentNode-> numberOfKeys < mkeys)
       currentNode-> stringNodeInsert(newRecord);
 
-    else{
+    else
+	{
 
-      if(currentNode-> isLeaf){
+      if(currentNode-> isLeaf)
+	  {
 
         newRecord = currentNode-> stringSplitNode(newRecord);
         currentNode-> isLeaf = 1;
 
-      }else{
+      }
+	  else
+	  {
 
         newRecord = currentNode-> stringSplitParent(newRecord);
         currentNode-> isLeaf = 0;
       }
 
-      while(1){
+      while(1)
+	  {
 
-        if(currentNode == root){
+        if(currentNode == root)
+		{
 
           temp = new node;
           temp-> data[0] = newRecord;
@@ -200,26 +228,34 @@ class bPTree{
           temp-> data[0].left-> parent = temp;
           return;
 
-        }else{
+        }
+		else
+		{
 
           currentNode = currentNode-> parent;
 
           if(currentNode-> data[0].left != NULL)
             currentNode-> isLeaf = 0;
 
-          if(currentNode-> numberOfKeys < mkeys){
+          if(currentNode-> numberOfKeys < mkeys)
+		  {
 
             currentNode-> stringNodeInsert(newRecord);
             return;
 
-          }else{
+          }
+		  else
+		  {
 
-            if(currentNode-> isLeaf){
+            if(currentNode-> isLeaf)
+			{
 
               newRecord = currentNode-> stringSplitNode(newRecord);
               currentNode-> isLeaf = 1;
 
-            }else{
+            }
+			else
+			{
 
               newRecord = currentNode-> stringSplitParent(newRecord);
               currentNode-> isLeaf = 0;
@@ -242,8 +278,8 @@ class bPTree{
           /**
           * Display the tree structure with keys of type int.
           */
-          void showTree()
-          {
+void showTree()
+{
   Queue queue1,
         queue2;
 
@@ -251,20 +287,23 @@ class bPTree{
   node *currentNode;
   queue1.enque(root);
 
-  while( !queue1.empty() ){
+  while( !queue1.empty() )
+  {
 
      queue2.makeEmpty();
      mount << endl;
      cout << endl;
 
-     while( !queue1.empty() ){
+     while( !queue1.empty() )
+	 {
 
       currentNode = queue1.deque();
       currentNode-> display();
       mount << "  ";
       cout << "  ";
 
-      if( !currentNode-> isLeaf ){
+      if( !currentNode-> isLeaf )
+	  {
 
         queue2.enque(currentNode-> data[0].left);
 
@@ -282,8 +321,8 @@ class bPTree{
           /**
           * Display the tree structure with keys of type string.
           */
-          void stringShowTree()
-          {
+void stringShowTree()
+{
   Queue queue1,
         queue2;
 
@@ -291,20 +330,23 @@ class bPTree{
   node *currentNode;
   queue1.enque(root);
 
-  while( !queue1.empty() ){
+  while( !queue1.empty() )
+  {
 
      queue2.makeEmpty();
      mount << endl;
      cout << endl;
 
-     while( !queue1.empty() ){
+     while( !queue1.empty() )
+	 {
 
       currentNode = queue1.deque();
       currentNode-> stringDisplay();
       mount << "  ";
       cout << "  ";
 
-      if( !currentNode-> isLeaf ){
+      if( !currentNode-> isLeaf )
+	  {
 
         queue2.enque(currentNode-> data[0].left);
 
@@ -323,8 +365,9 @@ class bPTree{
           /**
           * Display all of the key values of type int.
           */
-          void listValues()
-          {
+
+void listValues()
+{
   Queue q1,
         q2;
 
@@ -332,22 +375,26 @@ class bPTree{
 
   q1.enque(root);
 
-  while(!q1.empty()){
+  while(!q1.empty())
+  {
 
     q2.makeEmpty();
 
     mount << "\n";
     cout << "\n";
 
-    while(!q1.empty()){
+    while(!q1.empty())
+	{
 
       currentNode = q1.deque();
 
-      if(currentNode-> isLeaf){
+      if(currentNode-> isLeaf)
+	  {
 
         currentNode-> displayval();
       }
-      if( !currentNode-> isLeaf){
+      if( !currentNode-> isLeaf)
+	  {
 
 
         q2.enque(currentNode-> data[0].left);
@@ -366,8 +413,8 @@ class bPTree{
           /**
           * Display all of the key values of type int.
           */
-          void stringListValues()
-          {
+void stringListValues()
+{
   Queue q1,
         q2;
 
@@ -375,22 +422,26 @@ class bPTree{
 
   q1.enque(root);
 
-  while(!q1.empty()){
+  while(!q1.empty())
+  {
 
     q2.makeEmpty();
 
     mount << "\n";
     cout << "\n";
 
-    while(!q1.empty()){
+    while(!q1.empty())
+	{
 
       currentNode = q1.deque();
 
-      if(currentNode-> isLeaf){
+      if(currentNode-> isLeaf)
+	  {
 
         currentNode-> stringDisplayval();
       }
-      if( !currentNode-> isLeaf){
+      if( !currentNode-> isLeaf)
+	  {
 
 
         q2.enque(currentNode-> data[0].left);
@@ -414,8 +465,8 @@ class bPTree{
           * Removes a key of type int from the tree.
           * @param int value The key to be removed from the tree.
           */
-          void Delete(int value)
-          {
+void Delete(int value)
+{
 
   node *left,
        *right;
@@ -435,7 +486,8 @@ class bPTree{
   ;
 
 
-  if(p-> isLeaf){
+  if(p-> isLeaf)
+  {
 
     for(i = i + 1; i < p-> numberOfKeys; i++)
       p-> data[i - 1] = p-> data[i];
@@ -444,24 +496,28 @@ class bPTree{
 
     //delete the value from keys[]
     for(i = 0; i < totalNumberOfKeys; i++)
-      if(keys[i] == value){
+      if(keys[i] == value)
+	  {
         for(j = i; j < totalNumberOfKeys; j++)
         keys[j] = keys[j + 1];
-    }
+	  }
     totalNumberOfKeys--;
   }
 
 
-  while(p-> isLeaf){
+  while(p-> isLeaf)
+  {
 
     if(p-> numberOfKeys >= mkeys / 2 )
       return;
 
-    if( p == root ){
+    if( p == root )
+	{
 
       if(p-> numberOfKeys > 0)
         return;
-      else{
+      else
+	  {
 
         root = p-> data[0].left;
         return;
@@ -471,14 +527,17 @@ class bPTree{
 
     q = p-> parent;
 
-    if(q-> data[0].left == p || q-> data[0].right == p){
+    if(q-> data[0].left == p || q-> data[0].right == p)
+	{
 
       left = q-> data[0].left;
       right = q-> data[0].right;
       center =& (q-> data[0]);
       middleIndex = 0;
 
-    }else{
+    }
+	else
+	{
 
 
       for( i = 0; i < q-> numberOfKeys; i++)
@@ -491,7 +550,8 @@ class bPTree{
       middleIndex = i;
     }
 
-    if(right-> numberOfKeys > mkeys / 2){
+    if(right-> numberOfKeys > mkeys / 2)
+	{
 
       left-> data[left-> numberOfKeys].key = center-> key;
       left-> numberOfKeys++;
@@ -505,7 +565,8 @@ class bPTree{
     }
 
     //merge left and right
-    else{
+    else
+	{
 
       left-> data[left-> numberOfKeys].key = center-> key;
       left -> numberOfKeys++;
@@ -528,11 +589,14 @@ class bPTree{
 
   q = recordPosition;
 
-  while( !q-> isLeaf){
+  while( !q-> isLeaf)
+  {
 
-    for( i = 0; i < q-> numberOfKeys; i++){
+    for( i = 0; i < q-> numberOfKeys; i++)
+	{
 
-      if(q-> data[i].key == value){
+      if(q-> data[i].key == value)
+	  {
 
         for( i = i + 1; i < q-> numberOfKeys; i++)
           q-> data[i - 1] = q-> data[i];
@@ -547,16 +611,19 @@ class bPTree{
 
   p = q;
 
-  while( !p-> isLeaf){
+  while( !p-> isLeaf)
+  {
 
     if(p-> numberOfKeys >= mkeys / 2 )
       return;
 
-    if(p == root ){
+    if(p == root )
+	{
 
       if(p-> numberOfKeys > 0)
         return;
-      else{
+      else
+	  {
 
         root = p-> first;
         return;
@@ -564,14 +631,17 @@ class bPTree{
     }
 
     q = p-> parent;
-    if(q-> data[0].left == p || q-> data[0].right == p){
+    if(q-> data[0].left == p || q-> data[0].right == p)
+	{
 
       left = q-> data[0].left;
       right = q-> data[0].right;
       center =& (q-> data[0]);
       middleIndex = 0;
 
-    }else{
+    }
+	else
+	{
 
       for( i = 1; i < q-> numberOfKeys; i++)
         if(q->data[i].right==p)
@@ -585,7 +655,8 @@ class bPTree{
 
 
     //left has an extra key
-    if(left-> numberOfKeys > mkeys / 2){
+    if(left-> numberOfKeys > mkeys / 2)
+	{
 
       for(i = right-> numberOfKeys - 1; i >= 0; i--)
         right-> data[i + 1] = right-> data[i];
@@ -600,7 +671,8 @@ class bPTree{
     //right has an extra key
     else
 
-    if(right-> numberOfKeys > mkeys / 2){
+    if(right-> numberOfKeys > mkeys / 2)
+	{
 
       left-> data[left-> numberOfKeys].key = center-> key;
       left-> numberOfKeys++;
@@ -614,7 +686,8 @@ class bPTree{
     }
 
     //merge left and right
-    else{
+    else
+	{
 
       left-> data[left-> numberOfKeys].key = center-> key;
       left-> numberOfKeys++;
@@ -641,8 +714,8 @@ class bPTree{
           * Removes a key of type string from the tree.
           * @param string value The key to be removed from the tree.
           */
-          void stringDelete(string value)
-          {
+void stringDelete(string value)
+{
 
   node *left,
        *right;
@@ -662,7 +735,8 @@ class bPTree{
   ;
 
 
-  if(p-> isLeaf){
+  if(p-> isLeaf)
+  {
 
     for(i = i + 1; i < p-> numberOfKeys; i++)
       p-> data[i - 1] = p-> data[i];
@@ -671,24 +745,28 @@ class bPTree{
 
     //delete the value from keys[]
     for(i = 0; i < totalNumberOfKeys; i++)
-      if(stringKeys[i] == value){
+      if(stringKeys[i] == value)
+	  {
         for(j = i; j < totalNumberOfKeys; j++)
         stringKeys[j] = stringKeys[j + 1];
-    }
+	  }
     totalNumberOfKeys--;
   }
 
 
-  while(p-> isLeaf){
+  while(p-> isLeaf)
+  {
 
     if(p-> numberOfKeys >= mkeys / 2 )
       return;
 
-    if( p == root ){
+    if( p == root )
+	{
 
       if(p-> numberOfKeys > 0)
         return;
-      else{
+      else
+	  {
 
         root = p-> data[0].left;
         return;
@@ -698,14 +776,16 @@ class bPTree{
 
     q = p-> parent;
 
-    if(q-> data[0].left == p || q-> data[0].right == p){
+    if(q-> data[0].left == p || q-> data[0].right == p)
+	{
 
       left = q-> data[0].left;
       right = q-> data[0].right;
       center =& (q-> data[0]);
       middleIndex = 0;
 
-    }else{
+    }else
+	{
 
 
       for( i = 0; i < q-> numberOfKeys; i++)
@@ -718,7 +798,8 @@ class bPTree{
       middleIndex = i;
     }
 
-    if(right-> numberOfKeys > mkeys / 2){
+    if(right-> numberOfKeys > mkeys / 2)
+	{
 
       left-> data[left-> numberOfKeys].stringKey = center-> stringKey;
       left-> numberOfKeys++;
@@ -732,7 +813,8 @@ class bPTree{
     }
 
     //merge left and right
-    else{
+    else
+	{
 
       left-> data[left-> numberOfKeys].stringKey = center-> stringKey;
       left -> numberOfKeys++;
@@ -755,11 +837,14 @@ class bPTree{
 
   q = recordPosition; //record position is a node
 
-  while( !q-> isLeaf){
+  while( !q-> isLeaf)
+  {
 
-    for( i = 0; i < q-> numberOfKeys; i++){
+    for( i = 0; i < q-> numberOfKeys; i++)
+	{
 
-      if(q-> data[i].stringKey == value){
+      if(q-> data[i].stringKey == value)
+	  {
 
         for( i = i + 1; i < q-> numberOfKeys; i++)
           q-> data[i - 1] = q-> data[i];
@@ -774,16 +859,19 @@ class bPTree{
 
   p = q;
 
-  while( !p-> isLeaf){
+  while( !p-> isLeaf)
+  {
 
     if(p-> numberOfKeys >= mkeys / 2 )
       return;
 
-    if(p == root ){
+    if(p == root )
+	{
 
       if(p-> numberOfKeys > 0)
         return;
-      else{
+      else
+	  {
 
         root = p-> first;
         return;
@@ -791,14 +879,17 @@ class bPTree{
     }
 
     q = p-> parent;
-    if(q-> data[0].left == p || q-> data[0].right == p){
+    if(q-> data[0].left == p || q-> data[0].right == p)
+	{
 
       left = q-> data[0].left;
       right = q-> data[0].right;
       center =& (q-> data[0]);
       middleIndex = 0;
 
-    }else{
+    }
+	else
+	{
 
       for( i = 1; i < q-> numberOfKeys; i++)
         if(q-> data[i].right == p)
@@ -812,7 +903,8 @@ class bPTree{
 
 
     //left has an extra key
-    if(left-> numberOfKeys > mkeys / 2){
+    if(left-> numberOfKeys > mkeys / 2)
+	{
 
       for(i = right-> numberOfKeys - 1; i >= 0; i--)
         right-> data[i + 1] = right-> data[i];
@@ -827,7 +919,8 @@ class bPTree{
     //right has an extra key
     else
 
-    if(right-> numberOfKeys > mkeys / 2){
+    if(right-> numberOfKeys > mkeys / 2)
+	{
 
       left-> data[left-> numberOfKeys].stringKey = center-> stringKey;
       left-> numberOfKeys++;
@@ -841,7 +934,8 @@ class bPTree{
     }
 
     //merge left and right
-    else{
+    else
+	{
 
       left-> data[left-> numberOfKeys].stringKey = center-> stringKey;
       left-> numberOfKeys++;
