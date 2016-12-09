@@ -17,3 +17,44 @@ What would you like to do?
 [Ar CE ]  
 [AB AZ ]  [Ar Bh ]  [CE CY ]  What would you like to do?
 
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+
+
+AB
+AZ
+Ar
+Bh
+CE
+CY
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+What is the string key you would like to add: 
+
+
+Key has been added
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+
+[Ar CE ]  
+[AB AZ ]  [Ar Bh ]  [CE CY ee ]  What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
