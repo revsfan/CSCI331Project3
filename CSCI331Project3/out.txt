@@ -1,0 +1,23 @@
+String file opened successfully 
+
+Enter the number of values per block: 
+Number of values per block have been set to: 4
+Loading keys into the tree...
+
+The B+ tree has been created.
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+
+[je sf ]  
+[Am Et Pm aF ]  [je ls qI ]  [sf xZ ]  
+
+What would you like to do?
+
