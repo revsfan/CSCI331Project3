@@ -1,3 +1,8 @@
+#ifndef BPTREE_H
+#define BPTREE_H
+
+
+
 #define MAXSIZE 150 /** < Max number of records */
 #include <iostream>
 #include <cstdlib>
@@ -27,7 +32,7 @@ class bPTree
   int totalNumberOfKeys;
 
     public:
-    	
+
 
           bPTree(int n)
 		  {
@@ -959,3 +964,5 @@ void stringDelete(string value)
 
 
 };
+
+#endif // BPTREE_H

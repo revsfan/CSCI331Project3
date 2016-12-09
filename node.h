@@ -1,9 +1,11 @@
+
 //node class that will store a pointer to either another node or a record (leaf)
 /**
 *   Node class that will store a pointer to either another node or a record (leaf).
 */
-#ifndef NODE
-#define NODE
+#ifndef NODE_H
+#define NODE_H
+
 #define MAXSIZE 150 /** < Max number of records */
 #include <iostream>
 #include <cstdlib>
@@ -480,4 +482,6 @@ public:
 }
 
 }; //END NODE CLASS
-#endif // NODE
+
+
+#endif // NODE_H

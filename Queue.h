@@ -1,3 +1,7 @@
+#ifndef QUEUE_H
+#define QUEUE_H
+#pragma once
+
 #include "node.h"
 //Go through tree nodes
 class Queue
@@ -48,3 +52,4 @@ class Queue
       }
 }; //END QUEUE CLASS
 
+#endif //QUEUE_H
