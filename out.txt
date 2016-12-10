@@ -1,46 +1,12 @@
 String file opened successfully 
 
 Enter the number of values per block: 
-Number of values per block have been set to: 3
+Number of values per block have been set to: 6
 Loading keys into the tree...
 
 The B+ tree has been created.
 
-What would you like to do?
 
-1. Add record
-2. Delete record
-3. Show tree
-4. List values
-5. Quit the program
-
-[Ar CE ]  
-[AB AZ ]  [Ar Bh ]  [CE CY ]  What would you like to do?
-
-1. Add record
-2. Delete record
-3. Show tree
-4. List values
-5. Quit the program
-
-
-AB
-AZ
-Ar
-Bh
-CE
-CY
-What would you like to do?
-
-1. Add record
-2. Delete record
-3. Show tree
-4. List values
-5. Quit the program
-What is the string key you would like to add: 
-
-
-Key has been added
 
 What would you like to do?
 
@@ -50,11 +16,36 @@ What would you like to do?
 4. List values
 5. Quit the program
 
-[Ar CE ]  
-[AB AZ ]  [Ar Bh ]  [CE CY ee ]  What would you like to do?
+[IM aU ]  
+[CE EA Gh ]  [MM Pf Vt ]  [cY eG jE mj rb vR ]  
+[AB AZ Ar Bh ]  [CE CY DW Da ]  [EA Eb FD Gb ]  [Gh Gs HD Hu ]  [IM JI JL JW ]  [MM MT NM Pa ]  [Pf Pi QR VZ ]  [Vt Vy Wi Yq ]  [aU bW bv cB ]  [cY dK dT dy ]  [eG eS gn iq ]  [jE ji kp lS ]  [mj nF ot ra ]  [rb sK tX tq ]  [vR wv xx zi zv ]  
+
+What would you like to do?
 
 1. Add record
 2. Delete record
 3. Show tree
 4. List values
 5. Quit the program
+
+What is the string key you would like to delete: 
+
+
+Key has been deleted from the tree
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+
+[IM aU ]  
+[CE EA Gh ]  [MM Pf Vt ]  [cY eG jE mj rb vR ]  
+[AB AZ Ar Bh ]  [CE CY DW Da ]  [EA Eb FD Gb ]  [Gh Gs HD Hu ]  [IM JI JL JW ]  [MM MT NM Pa ]  [Pf Pi QR VZ ]  [Vt Vy Wi Yq ]  [bW bv cB ]  [cY dK dT dy ]  [eG eS gn iq ]  [jE ji kp lS ]  [mj nF ot ra ]  [rb sK tX tq ]  [vR wv xx zi zv ]  
+
+What would you like to do?
+

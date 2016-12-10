@@ -1,31 +1,30 @@
-
 //node class that will store a pointer to either another node or a record (leaf)
 /**
 *   Node class that will store a pointer to either another node or a record (leaf).
 */
-#ifndef NODE_H
-#define NODE_H
-
+#ifndef NODE
+#define NODE
 #define MAXSIZE 150 /** < Max number of records */
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
-#include <conio.h>
+
 #include <stdlib.h>
 #include "shared.h"
 //#include "record.h"
 using namespace std;
 
-class node;
-  node *position, *recordPosition; //node variables
 
+/**
+* Node class to store either records or a pointer to the next node in the tree
+*/
 class node{
 
 public:
 
 /**
-* Struct that is a record which holds a key (either int or string) and a left and right pointer to the next record.
+*   Holds the key value
 */
  struct record{
 
@@ -379,7 +378,11 @@ public:
   return(newRecord);
 }
 
-
+/**
+*   Gets the next index (right next node)
+*   @param int value Value to find the node
+*   @return node A pointer to a node
+*/
   node *nextindex(int value)
   {
 
@@ -404,6 +407,11 @@ public:
 
 }
 
+/**
+*   Gets the next index (right next node)
+*   @param string value An input value to find the node
+*   @return node A pointer to a node
+*/
   node *stringNextindex(string value)
   {
 
@@ -489,6 +497,4 @@ public:
 }
 
 }; //END NODE CLASS
-
-
-#endif // NODE_H
+#endif // NODE
