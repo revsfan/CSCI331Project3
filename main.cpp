@@ -215,7 +215,7 @@ if(argc == 3){
 
 if (argc == 2){
 
-    if(argv[1][1] == 's'){ //if the input file is of type string
+    if(argv[1][1] == 's'){ //empty int tree
 
         ifstream stringInFile( argv[2]);
         cout << "String file opened successfully \n\n";
@@ -347,9 +347,9 @@ if(argv[1][1] == 'i'){ //empty int tree
                                     break;
 
                 //deleting a record
-                case 2:            cout << "\nWhat is the string key you would like to delete: \n\n";
-                                    mount << "\nWhat is the string key you would like to delete: \n\n";
-                                    //string value;
+                case 2:            cout << "\nWhat is the int key you would like to delete: \n\n";
+                                    mount << "\nWhat is the int key you would like to delete: \n\n";
+                                    //int value;
                                     cin >> value;
 
                                     bPlusTree.intDelete(value);
@@ -386,226 +386,6 @@ if(argv[1][1] == 'i'){ //empty int tree
         helpMenu();
         exit(EXIT_SUCCESS);
     }
-
-
-
-
-
-
-
-
-//if(argv[1][1] == 't'){
-//
-//cout << "Running empty string tree test\n";
-//cout << "Making empty tree with keys of type string...\n\n";
-//
-//
-//bPTree testTree(TEST_VALUE);
-//
-//cout << "Block size is set to " << TEST_VALUE << endl << endl;
-//
-//cout << "Tree output..." << endl << endl;
-//
-//testTree.stringShowTree();
-//
-//cout << "\nAdding values aF, iF, cG, jk, lO, Uh, MM, hF, rq, yH\n\n";
-//testTree.stringInsert("aF");
-//testTree.stringInsert("iF");
-//testTree.stringInsert("cG");
-//testTree.stringInsert("jk");
-//testTree.stringInsert("lO");
-//testTree.stringInsert("Uh");
-//testTree.stringInsert("MM");
-//testTree.stringInsert("hF");
-//testTree.stringInsert("rq");
-//testTree.stringInsert("yH");
-//
-//cout << "Tree output..." << endl << endl;
-//mount << "Tree output..." << endl << endl;
-//
-//testTree.stringShowTree();
-//
-//cout << "Deleting cG and jk\n\n";
-////testTree.stringDelete("lO");
-//
-//cout << "Tree output..." << endl << endl;
-//
-//testTree.stringShowTree();
-//
-////testTree.stringDelete("aF");
-//
-//cout << "\n\nListing values in tree";
-//
-//testTree.stringListValues();
-//
-//cout << "\n\nEND STRING TREE TEST\n\n\n\n";
-//
-//
-//
-//
-//
-//// empty int tree test
-//
-//cout << "Running empty int test\n";
-//cout << "Making empty tree with keys of type int...\n\n";
-//
-//
-//bPTree testTree2(TEST_VALUE);
-//
-//cout << "Block size is set to " << TEST_VALUE << endl << endl;
-//
-//cout << "Tree output..." << endl << endl;
-//
-//testTree.stringShowTree();
-//
-//cout << "\nAdding values 82, 15, 22, 53, 18, 19, 23, 44, 68, 35 \n\n";
-//testTree2.insert(82);
-//testTree2.insert(15);
-//testTree2.insert(22);
-//testTree2.insert(53);
-//testTree2.insert(18);
-//testTree2.insert(19);
-//testTree2.insert(23);
-//testTree2.insert(44);
-//testTree2.insert(68);
-//testTree2.insert(35);
-//
-//cout << "Tree output..." << endl << endl;
-//mount << "Tree output..." << endl << endl;
-//
-//testTree2.showTree();
-//
-//cout << "Deleting 19 and 15\n\n";
-////testTree2.intDelete(19);
-//
-//cout << "Tree output..." << endl << endl;
-//
-//testTree2.showTree();
-//
-////testTree.intDelete(15);
-//
-//cout << "Listing values...\n\n";
-//
-//testTree2.listValues();
-//
-//cout << "END INT TREE TEST\n\n\n\n";
-//
-//
-//
-////STRING FILE TEST TREE
-//
-//
-//
-//cout << "Running string tree test with input file...\n\n";
-//
-//bPTree testTree3(TEST_VALUE);
-//
-//cout << "Block size is set to " << TEST_VALUE << endl << endl;
-//
-//    ifstream stringInFile("stringAutoTest.txt");
-//
-//        cout << "Loading keys into the tree...\n\n";
-//        mount << "Loading keys into the tree...\n\n";
-//
-//        while(stringInFile >> stringValue){
-//            testTree3.stringInsert(stringValue); // only need stringValue
-//        }
-//
-//
-//        cout << "The B+ tree has been created.\n\n";
-//        mount << "The B+ tree has been created.\n\n";
-//
-//
-//
-//cout << "Tree output..." << endl << endl;
-//
-//testTree3.stringShowTree();
-//
-//
-//cout << "Deleting values ji and rb\n\n";
-//testTree3.stringDelete("ji");
-//
-//cout << "\n\nTree output..." << endl << endl;
-//
-//testTree3.stringShowTree();
-//
-//testTree3.stringDelete("rb");
-//
-//
-//cout << "\n\nTree output..." << endl << endl;
-//
-//testTree3.stringShowTree();
-//
-//cout << "Listing values...\n\n";
-//
-//testTree3.stringListValues();
-//
-//cout << "\n\nEND STRING INPUT FILE TEST\n\n\n\n";
-//
-//
-//
-//
-//
-//
-//
-//
-//
-////INT FILE TEST TREE
-//
-//
-//
-//cout << "Running int tree test with input file...\n\n";
-//
-//bPTree testTree4(TEST_VALUE);
-//
-//cout << "Block size is set to " << TEST_VALUE << endl << endl;
-//
-//    ifstream intInFile("intAutoTest.txt");
-//
-//        cout << "Loading keys into the tree...\n\n";
-//        mount << "Loading keys into the tree...\n\n";
-//
-//        while(intInFile >> intValue){
-//            testTree4.insert(intValue); // only need stringValue
-//        }
-//
-//
-//        cout << "The B+ tree has been created.\n\n";
-//        mount << "The B+ tree has been created.\n\n";
-//
-//
-//
-//cout << "Tree output..." << endl << endl;
-//
-//testTree4.showTree();
-//
-//
-//cout << "Deleting values 28 and 35\n\n";
-//testTree4.intDelete(28);
-//
-//cout << "\n\nTree output..." << endl << endl;
-//
-//testTree4.showTree();
-//
-//testTree4.intDelete(35);
-//
-//
-//cout << "\n\nTree output..." << endl << endl;
-//
-//testTree4.showTree();
-//
-//cout << "Listing values...\n\n";
-//
-//testTree4.listValues();
-//
-//cout << "\n\nEND INT INPUT FILE TEST\n\n\n\n";
-//
-//
-//
-//
-//}
-
-
 
 
 
