@@ -37,13 +37,20 @@ if(argc == 3){
     if(argv[1][1] == 's'){ //if the input file is of type string
 
         ifstream stringInFile( argv[2]);
+        if(stringInFile.good()){
         cout << "String file opened successfully \n\n";
         mount << "String file opened successfully \n\n";
+        }else{
+            cout << "File could not be opened. Closing program...\n";
+            mount << "File could not be opened. Closing program...\n";
+            exit(EXIT_FAILURE);
+        }
 
         cout << "Enter the number of values per block: " << endl;
         mount << "Enter the number of values per block: " << endl;
 
         cin >> number;
+        mount << number;
 
         cout << "Number of values per block have been set to: " << number << endl;
         mount << "Number of values per block have been set to: " << number << endl;
@@ -70,6 +77,7 @@ if(argc == 3){
 
         menu(); //display menu
         cin >> choice;
+        mount << choice;
 
 
             switch(choice){
@@ -79,6 +87,7 @@ if(argc == 3){
                                     mount << "What is the string key you would like to add: \n\n";
 
                                     cin >> value;
+                                    mount << value;
 
                                     bPlusTree.stringInsert(value);
                                     cout << "\nKey has been added\n\n";
@@ -90,6 +99,7 @@ if(argc == 3){
                                     mount << "\nWhat is the string key you would like to delete: \n\n";
                                     //string value;
                                     cin >> value;
+                                    mount << value;
 
                                     bPlusTree.stringDelete(value);
                                     cout << "\nKey has been deleted from the tree\n\n";
@@ -105,8 +115,10 @@ if(argc == 3){
             case 4:               bPlusTree.stringListValues();
                                     break;
 
-            //go back to the other menu
-            case 5:               exit(EXIT_SUCCESS);
+            //exit program
+            case 5:                 cout << "\n\nClosing Program...\n";
+                                    mount << "\n\nClosing Program...\n";
+                                    exit(EXIT_SUCCESS);
                                     break;
 
             //ERROR
@@ -123,13 +135,25 @@ if(argc == 3){
     if(argv[1][1] == 'i'){ //if the input file is of type int
 
         ifstream intIntFile( argv[2]);
-        cout << "Integer file opened successfully \n\n";
-        mount << "Integer file opened successfully \n\n";
+
+        if(intIntFile){
+
+                    cout << "Integer file opened successfully \n\n";
+                    mount << "Integer file opened successfully \n\n";
+
+        }
+        else{
+            cout << "File could not be opened. Closing program...\n";
+            mount << "File could not be opened. Closing program...\n";
+            exit(EXIT_FAILURE);
+        }
+
 
         cout << "Enter the number of values per block: " << endl;
         mount << "Enter the number of values per block: " << endl;
 
         cin >> number;
+        mount << number;
 
         cout << "Number of values per block have been set to: " << number << endl;
         mount << "Number of values per block have been set to: " << number << endl;
@@ -157,6 +181,7 @@ if(argc == 3){
 
         menu(); //display menu
         cin >> choice;
+        mount << choice;
 
 
             switch(choice){
@@ -166,6 +191,7 @@ if(argc == 3){
                                     mount << "What is the int key you would like to add: \n\n";
 
                                     cin >> value;
+                                    mount << value;
 
                                     bPlusTree.insert(value);
                                     cout << "\nKey has been added\n\n";
@@ -177,6 +203,7 @@ if(argc == 3){
                                     mount << "\nWhat is the int key you would like to delete: \n\n";
                                     //int value;
                                     cin >> value;
+                                    mount << value;
 
                                     bPlusTree.intDelete(value);
                                     cout << "\nKey has been deleted from the tree\n\n";
@@ -192,8 +219,10 @@ if(argc == 3){
             case 4:               bPlusTree.listValues();
                                     break;
 
-            //go back to the other menu
-            case 5:               exit(EXIT_SUCCESS);
+            //exit program
+            case 5:                 cout << "\n\nClosing Program...\n";
+                                    mount << "\n\nClosing Program...\n";
+                                    exit(EXIT_SUCCESS);
                                     break;
 
             //ERROR
@@ -225,6 +254,7 @@ if (argc == 2){
         mount << "Enter the number of values per block: " << endl;
 
         cin >> number;
+        mount << number;
 
         cout << "Number of values per block have been set to: " << number << endl;
         mount << "Number of values per block have been set to: " << number << endl;
@@ -251,6 +281,7 @@ if (argc == 2){
 
         menu(); //display menu
         cin >> choice;
+        mount << choice;
 
 
             switch(choice){
@@ -260,6 +291,7 @@ if (argc == 2){
                                     mount << "What is the string key you would like to add: \n\n";
 
                                     cin >> value;
+                                    mount << value;
 
                                     bPlusTree.stringInsert(value);
                                     cout << "\nKey has been added\n\n";
@@ -271,6 +303,7 @@ if (argc == 2){
                                     mount << "\nWhat is the string key you would like to delete: \n\n";
                                     //string value;
                                     cin >> value;
+                                    mount << value;
 
                                     bPlusTree.stringDelete(value);
                                     cout << "\nKey has been deleted from the tree\n\n";
@@ -286,8 +319,10 @@ if (argc == 2){
             case 4:               bPlusTree.stringListValues();
                                     break;
 
-            //go back to the other menu
-            case 5:               exit(EXIT_SUCCESS);
+            //exit program
+            case 5:                 cout << "\n\nClosing Program...\n";
+                                    mount << "\n\nClosing Program...\n";
+                                    exit(EXIT_SUCCESS);
                                     break;
 
             //ERROR
@@ -311,6 +346,7 @@ if(argv[1][1] == 'i'){ //empty int tree
         mount << "Enter the number of values per block: " << endl;
 
         cin >> number;
+        mount << number;
 
         cout << "Number of values per block have been set to: " << number << endl;
         mount << "Number of values per block have been set to: " << number << endl;
@@ -331,6 +367,7 @@ if(argv[1][1] == 'i'){ //empty int tree
 
         menu(); //display menu
         cin >> choice;
+        mount << choice;
 
 
             switch(choice){
@@ -340,6 +377,7 @@ if(argv[1][1] == 'i'){ //empty int tree
                                     mount << "What is the int key you would like to add: \n\n";
 
                                     cin >> value;
+                                    mount << value;
 
                                     bPlusTree.insert(value);
                                     cout << "\nKey has been added\n\n";
@@ -351,6 +389,7 @@ if(argv[1][1] == 'i'){ //empty int tree
                                     mount << "\nWhat is the int key you would like to delete: \n\n";
                                     //int value;
                                     cin >> value;
+                                    mount << value;
 
                                     bPlusTree.intDelete(value);
                                     cout << "\nKey has been deleted from the tree\n\n";
@@ -366,8 +405,10 @@ if(argv[1][1] == 'i'){ //empty int tree
             case 4:               bPlusTree.listValues();
                                     break;
 
-            //go back to the other menu
-            case 5:               exit(EXIT_SUCCESS);
+            //exit program
+            case 5:                 cout << "\n\nClosing Program...\n";
+                                    mount << "\n\nClosing Program...\n";
+                                    exit(EXIT_SUCCESS);
                                     break;
 
             //ERROR
@@ -413,11 +454,18 @@ void menu(){
 
 void helpMenu(){
 
+    cout << "-------------HELP MENU----------------------------\n\n";
+    mount << "-------------HELP MENU----------------------------\n\n";
+
     cout << "-i <FILENAME>                    integers with file";
+    mount << "-i <FILENAME>                    integers with file";
 
-    cout << "\n-s <FILENAME>                  strings with file";
+    cout << "\n-s <FILENAME>                    strings with file";
+    mount << "\n-s <FILENAME>                    strings with file";
 
-    cout << "\n-i                                 empty tree with integer keys";
+    cout << "\n-i                               empty tree with integer keys";
+    mount << "\n-i                               empty tree with integer keys";
 
-    cout << "\n-s                                  empty tree with string keys\n";
+    cout << "\n-s                               empty tree with string keys\n";
+    mount << "\n-s                               empty tree with string keys\n";
 }
