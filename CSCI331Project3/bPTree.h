@@ -365,11 +365,6 @@ if(stringSearch(value)){
 
 }
 
-  /**
-* This function searches a existing tree too see if the value inserted already exist's within in the tree
-* @param string value is The key that is to be searched within in the tree.
-* @return bool
-*/
 bool stringSearch(string value)
 {
   Queue q1,q2;
@@ -951,11 +946,7 @@ cout << "after delete loop" << endl  << flush;
 
 }
 
-/**
-* This function searches a existing tree too see if the value inserted already exist's within in the tree
-* @param int value is The key that is to be searched within in the tree.
-* @return bool
-*/
+
 bool search(int value)
 {
   Queue q1,

@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
-#include <conio.h>
+
 #include <stdlib.h>
 #include "shared.h"
 //#include "record.h"

@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
-#include <conio.h>
+
 #include <stdlib.h>
 #include "bPTree.h"
 #include "node.h"
@@ -141,6 +141,63 @@ if(argc == 3){
         mount << "The B+ tree has been created.\n\n";
 
 
+
+        int choice = 0;
+        int value;
+
+
+
+        while(choice < 5){
+
+        menu(); //display menu
+        cin >> choice;
+
+
+            switch(choice){
+
+                //adding a record
+                case 1:             cout << "What is the string key you would like to add: \n\n";
+                                    mount << "What is the string key you would like to add: \n\n";
+
+                                    cin >> value;
+
+                                    bPlusTree.insert(value);
+                                    cout << "\nKey has been added\n\n";
+                                    mount << "\nKey has been added\n\n";
+                                    break;
+
+                //deleting a record
+                case 2:            cout << "\nWhat is the string key you would like to delete: \n\n";
+                                    mount << "\nWhat is the string key you would like to delete: \n\n";
+                                    //string value;
+                                    cin >> value;
+
+                                    bPlusTree.intdelete(value);
+                                    cout << "\nKey has been deleted from the tree\n\n";
+                                    mount << "\nKey has been deleted from the tree\n\n";
+                                    break;
+
+
+            //show tree
+            case 3:               bPlusTree.showTree();
+                                    break;
+
+            //list values
+            case 4:               bPlusTree.listValues();
+                                    break;
+
+            //go back to the other menu
+            case 5:               exit(EXIT_SUCCESS);
+                                    break;
+
+            //ERROR
+            default:                cout << "Something went wrong...";
+                                    mount << "Something went wrong...";
+                                    exit(EXIT_FAILURE);
+            }
+
+
+        }
         }
 
 
@@ -200,6 +257,7 @@ if(argc == 3){
 //
 //inputFile.close();
 //
+
 
 return 0;
 }
