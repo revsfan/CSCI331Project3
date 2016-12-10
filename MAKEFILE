@@ -1,0 +1,4 @@
+CXX = g++ 
+CXXFLAGS = -std=c++x0 
+main: main.cpp bPTree.h node.h Queue.h shared.h
+	$(CXX)  $(CXXFLAGS)-o main main.o
