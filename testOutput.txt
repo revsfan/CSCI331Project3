@@ -1,0 +1,925 @@
+-------------HELP MENU----------------------------
+
+-i <FILENAME>                    integers with file
+-s <FILENAME>                    strings with file
+-i                               empty tree with integer keys
+-s                               empty tree with string keys
+
+
+END HELP FLAG TEST
+END HELP FLAG TEST
+END HELP FLAG TEST
+END HELP FLAG TEST
+
+
+
+Enter the number of values per block: 
+6Number of values per block have been set to: 6
+The B+ tree has been created.
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3[]
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the int key you would like to add: 
+
+11
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the int key you would like to add: 
+
+15
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the int key you would like to add: 
+
+14
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the int key you would like to add: 
+
+43
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the int key you would like to add: 
+
+64
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the int key you would like to add: 
+
+33
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the int key you would like to add: 
+
+66
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the int key you would like to add: 
+
+98
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the int key you would like to add: 
+
+54
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3
+[43 ]  
+[11 14 15 33 ]  [43 54 64 66 98 ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+2
+What is the int key you would like to delete: 
+
+11
+Key has been deleted from the tree
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3
+[43 ]  
+[14 15 33 ]  [43 54 64 66 98 ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+2
+What is the int key you would like to delete: 
+
+33
+Key has been deleted from the tree
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3
+[43 ]  
+[14 15 43 ]  [54 64 66 98 ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+4
+
+14
+15
+43
+54
+64
+66
+98
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+5
+
+Closing Program...
+
+
+END EMPTY INT TREE TEST
+END EMPTY INT TREE TEST
+END EMPTY INT TREE TEST
+END EMPTY INT TREE TEST
+
+
+
+String file opened successfully 
+
+Enter the number of values per block: 
+6Number of values per block have been set to: 6
+Loading keys into the tree...
+
+The B+ tree has been created.
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3[]
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the string key you would like to add: 
+
+fd
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the string key you would like to add: 
+
+kL
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the string key you would like to add: 
+
+po
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the string key you would like to add: 
+
+MM
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the string key you would like to add: 
+
+gh
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the string key you would like to add: 
+
+Tr
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the string key you would like to add: 
+
+VB
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the string key you would like to add: 
+
+ZZ
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the string key you would like to add: 
+
+xz
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3
+[gh ]  
+[MM Tr VB ZZ fd ]  [gh kL po xz ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+2
+What is the string key you would like to delete: 
+
+MM
+Key has been deleted from the tree
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3
+[gh ]  
+[Tr VB ZZ fd ]  [gh kL po xz ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+2
+What is the string key you would like to delete: 
+
+fd
+Key has been deleted from the tree
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3
+[gh ]  
+[Tr VB ZZ ]  [gh kL po xz ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+2
+What is the string key you would like to delete: 
+
+ZZ
+Key has been deleted from the tree
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3
+[gh ]  
+[Tr VB gh ]  [kL po xz ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+4
+
+Tr
+VB
+gh
+kL
+po
+xz
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+5
+
+Closing Program...
+
+END EMPTY STRING TREE TEST
+END EMPTY STRING TREE TEST
+END EMPTY STRING TREE TEST
+END EMPTY STRING TREE TEST
+
+
+
+Integer file opened successfully 
+
+Enter the number of values per block: 
+6Number of values per block have been set to: 6
+Loading keys into the tree...
+
+The B+ tree has been created.
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3
+[33 53 69 ]  
+[15 22 27 ]  [39 45 49 ]  [57 61 65 ]  [74 78 82 87 91 95 ]  
+[10 11 13 14 ]  [15 16 17 19 ]  [22 24 25 26 ]  [27 28 29 32 ]  [33 35 36 37 ]  [39 42 43 44 ]  [45 46 47 48 ]  [49 50 51 52 ]  [53 54 55 56 ]  [57 58 59 60 ]  [61 62 63 64 ]  [65 66 67 68 ]  [69 70 71 72 ]  [74 75 76 77 ]  [78 79 80 81 ]  [82 83 84 85 ]  [87 88 89 90 ]  [91 92 93 94 ]  [95 97 98 ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+2
+What is the int key you would like to delete: 
+
+82
+Key has been deleted from the tree
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3
+[33 53 69 ]  
+[15 22 27 ]  [39 45 49 ]  [57 61 65 ]  [74 78 82 87 91 95 ]  
+[10 11 13 14 ]  [15 16 17 19 ]  [22 24 25 26 ]  [27 28 29 32 ]  [33 35 36 37 ]  [39 42 43 44 ]  [45 46 47 48 ]  [49 50 51 52 ]  [53 54 55 56 ]  [57 58 59 60 ]  [61 62 63 64 ]  [65 66 67 68 ]  [69 70 71 72 ]  [74 75 76 77 ]  [78 79 80 81 ]  [83 84 85 ]  [87 88 89 90 ]  [91 92 93 94 ]  [95 97 98 ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+2
+What is the int key you would like to delete: 
+
+83
+Key has been deleted from the tree
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3
+[33 53 69 ]  
+[15 22 27 ]  [39 45 49 ]  [57 61 65 ]  [74 78 87 91 95 ]  
+[10 11 13 14 ]  [15 16 17 19 ]  [22 24 25 26 ]  [27 28 29 32 ]  [33 35 36 37 ]  [39 42 43 44 ]  [45 46 47 48 ]  [49 50 51 52 ]  [53 54 55 56 ]  [57 58 59 60 ]  [61 62 63 64 ]  [65 66 67 68 ]  [69 70 71 72 ]  [74 75 76 77 ]  [78 79 80 81 82 84 85 ]  [87 88 89 90 ]  [91 92 93 94 ]  [95 97 98 ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the int key you would like to add: 
+
+83
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3
+[33 53 69 ]  
+[15 22 27 ]  [39 45 49 ]  [57 61 65 ]  [74 78 82 87 91 95 ]  
+[10 11 13 14 ]  [15 16 17 19 ]  [22 24 25 26 ]  [27 28 29 32 ]  [33 35 36 37 ]  [39 42 43 44 ]  [45 46 47 48 ]  [49 50 51 52 ]  [53 54 55 56 ]  [57 58 59 60 ]  [61 62 63 64 ]  [65 66 67 68 ]  [69 70 71 72 ]  [74 75 76 77 ]  [78 79 80 81 ]  [82 83 84 85 ]  [87 88 89 90 ]  [91 92 93 94 ]  [95 97 98 ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+4
+
+
+10
+11
+13
+14
+15
+16
+17
+19
+22
+24
+25
+26
+27
+28
+29
+32
+33
+35
+36
+37
+39
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+87
+88
+89
+90
+91
+92
+93
+94
+95
+97
+98
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+5
+
+Closing Program...
+
+
+END INT INPUT FILE TREE TEST
+END INT INPUT FILE TREE TEST
+END INT INPUT FILE TREE TEST
+END INT INPUT FILE TREE TEST
+
+
+
+String file opened successfully 
+
+Enter the number of values per block: 
+6Number of values per block have been set to: 6
+Loading keys into the tree...
+
+The B+ tree has been created.
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3
+[IM aU ]  
+[CE EA Gh ]  [MM Pf Vt ]  [cY eG jE mj rb vR ]  
+[AB AZ Ar Bh ]  [CE CY DW Da ]  [EA Eb FD Gb ]  [Gh Gs HD Hu ]  [IM JI JL JW ]  [MM MT NM Pa ]  [Pf Pi QR VZ ]  [Vt Vy Wi Yq ]  [aU bW bv cB ]  [cY dK dT dy ]  [eG eS gn iq ]  [jE ji kp lS ]  [mj nF ot ra ]  [rb sK tX tq ]  [vR wv xx zi zv ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+2
+What is the string key you would like to delete: 
+
+Yq
+Key has been deleted from the tree
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3
+[IM aU ]  
+[CE EA Gh ]  [MM Pf Vt ]  [cY eG jE mj rb vR ]  
+[AB AZ Ar Bh ]  [CE CY DW Da ]  [EA Eb FD Gb ]  [Gh Gs HD Hu ]  [IM JI JL JW ]  [MM MT NM Pa ]  [Pf Pi QR VZ ]  [Vt Vy Wi ]  [aU bW bv cB ]  [cY dK dT dy ]  [eG eS gn iq ]  [jE ji kp lS ]  [mj nF ot ra ]  [rb sK tX tq ]  [vR wv xx zi zv ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+2
+What is the string key you would like to delete: 
+
+zv
+Key has been deleted from the tree
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3
+[IM aU ]  
+[CE EA Gh ]  [MM Pf Vt ]  [cY eG jE mj rb vR ]  
+[AB AZ Ar Bh ]  [CE CY DW Da ]  [EA Eb FD Gb ]  [Gh Gs HD Hu ]  [IM JI JL JW ]  [MM MT NM Pa ]  [Pf Pi QR VZ ]  [Vt Vy Wi ]  [aU bW bv cB ]  [cY dK dT dy ]  [eG eS gn iq ]  [jE ji kp lS ]  [mj nF ot ra ]  [rb sK tX tq ]  [vR wv xx zi ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+1What is the string key you would like to add: 
+
+zz
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+3
+[IM aU ]  
+[CE EA Gh ]  [MM Pf Vt ]  [cY eG jE mj rb vR ]  
+[AB AZ Ar Bh ]  [CE CY DW Da ]  [EA Eb FD Gb ]  [Gh Gs HD Hu ]  [IM JI JL JW ]  [MM MT NM Pa ]  [Pf Pi QR VZ ]  [Vt Vy Wi ]  [aU bW bv cB ]  [cY dK dT dy ]  [eG eS gn iq ]  [jE ji kp lS ]  [mj nF ot ra ]  [rb sK tX tq ]  [vR wv xx zi zz ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+4
+
+
+AB
+AZ
+Ar
+Bh
+CE
+CY
+DW
+Da
+EA
+Eb
+FD
+Gb
+Gh
+Gs
+HD
+Hu
+IM
+JI
+JL
+JW
+MM
+MT
+NM
+Pa
+Pf
+Pi
+QR
+VZ
+Vt
+Vy
+Wi
+aU
+bW
+bv
+cB
+cY
+dK
+dT
+dy
+eG
+eS
+gn
+iq
+jE
+ji
+kp
+lS
+mj
+nF
+ot
+ra
+rb
+sK
+tX
+tq
+vR
+wv
+xx
+zi
+zz
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+5
+
+Closing Program...
+
+
+END STRING INPUT FILE TREE TEST
+END STRING INPUT FILE TREE TEST
+END STRING INPUT FILE TREE TEST
+END STRING INPUT FILE TREE TEST
