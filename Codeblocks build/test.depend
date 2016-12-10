@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1481336875 source:/home/stevenscholz/Desktop/test/main.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<fstream>
+	<stdlib.h>
+	"bPTree.h"
+	"node.h"
+
+1481337384 /home/stevenscholz/Desktop/test/include/bPTree.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<fstream>
+	<stdlib.h>
+	"node.h"
+	"Queue.h"
+
+1481337354 /home/stevenscholz/Desktop/test/include/node.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<fstream>
+	<stdlib.h>
+	"shared.h"
+
+1481330863 /home/stevenscholz/Desktop/test/include/shared.h
+
+1481330863 /home/stevenscholz/Desktop/test/include/Queue.h
+	"node.h"
+

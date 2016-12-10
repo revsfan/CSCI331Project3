@@ -1,0 +1,145 @@
+String file opened successfully 
+
+Enter the number of values per block: 
+Number of values per block have been set to: 6
+Loading keys into the tree...
+
+The B+ tree has been created.
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+What is the string key you would like to add: 
+
+
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+What is the string key you would like to add: 
+
+
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+What is the string key you would like to add: 
+
+
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+What is the string key you would like to add: 
+
+
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+What is the string key you would like to add: 
+
+
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+What is the string key you would like to add: 
+
+
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+
+[fg kg ll mb mm og ]  
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+What is the string key you would like to add: 
+
+
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+What is the string key you would like to add: 
+
+
+Key has been added
+
+
+
+What would you like to do?
+
+1. Add record
+2. Delete record
+3. Show tree
+4. List values
+5. Quit the program
+
+[mm ]  
+[fg kg ll mb ]  [mm og po vb ]  
+
+What would you like to do?
+
