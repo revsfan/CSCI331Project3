@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
-#include <conio.h>
+
 #include <stdlib.h>
 #include "node.h"
 #include "Queue.h"
@@ -140,7 +140,7 @@ public:
           * @param string value The key to be removed from the tree.
           */
 
-stringDelete(string value){
+void stringDelete(string value){
 
   node *left,
        *right;
@@ -688,229 +688,309 @@ bool stringSearch(string value)
           * Removes a key of type int from the tree.
           * @param int value The key to be removed from the tree.
           */
-          void Delete(int value)
-          {
+void intdelete(int value){
 
-            node *left,
-            *right;
+  node *left,
+       *right;
 
-            node::record *center;
+  node::record *center;
 
-            node *p,
-            *q;
-
-
-            int i,
-            j,
-            middleIndex;
+  node *p,
+       *q;
 
 
-            for(i = 0; p-> data[i].key != value; i++)
-              ;
+  int i,
+      j,
+      middleIndex;
 
+if(search(value)){
 
-            if(p-> isLeaf){
+    p = position;
+    cout << "search complete" << endl  << flush;
+}
 
-              for(i = i + 1; i < p-> numberOfKeys; i++)
-                p-> data[i - 1] = p-> data[i];
-              p-> numberOfKeys--;
+  for(i = 0; p-> data[i].key != value; i++)
+  ;
+cout << "Delete position is " << i << endl  << flush;
+
+  if(p-> isLeaf){
+
+    for(i = i + 1; i < p-> numberOfKeys; i++)
+      p-> data[i - 1] = p-> data[i];
+    p-> numberOfKeys--;
 
 
     //delete the value from keys[]
-              for(i = 0; i < totalNumberOfKeys; i++)
-                if(keys[i] == value){
-                  for(j = i; j < totalNumberOfKeys; j++)
-                    keys[j] = keys[j + 1];
-                }
-                totalNumberOfKeys--;
-              }
+    for(i = 0; i < totalNumberOfKeys; i++)
+      if(keys[i] == value){
+        for(j = i; j < totalNumberOfKeys; j++)
+        keys[j] = keys[j + 1];
+    }
+    totalNumberOfKeys--;
+  }
+cout << "after delete loop" << endl  << flush;
+
+  while(p-> isLeaf){
+
+    if(p-> numberOfKeys >= mkeys / 2 )
+      break;
+
+    if( p == root ){
+
+      if(p-> numberOfKeys > 0)
+        break;
+      else{
+
+        root = p-> data[0].left;
+        break;
+      }
+    }
 
 
-              while(p-> isLeaf){
+    q = p-> parent;
 
-                if(p-> numberOfKeys >= mkeys / 2 )
-                  return;
+    if(q-> data[0].left == p || q-> data[0].right == p){
 
-                if( p == root ){
+      left = q-> data[0].left;
+      right = q-> data[0].right;
+      center =& (q-> data[0]);
+      middleIndex = 0;
 
-                  if(p-> numberOfKeys > 0)
-                    return;
-                  else{
-
-                    root = p-> data[0].left;
-                    return;
-                  }
-                }
+    }else{
 
 
-                q = p-> parent;
+      for( i = 0; i < q-> numberOfKeys; i++)
+        if(q-> data[i].left == p || q-> data[i].right == p)
+          break;
 
-                if(q-> data[0].left == p || q-> data[0].right == p){
+      left = q-> data[i].left;
+      right = q-> data[i].right;
+      center =& (q-> data[i]);
+      middleIndex = i;
+    }
 
-                  left = q-> data[0].left;
-                  right = q-> data[0].right;
-                  center =& (q-> data[0]);
-                  middleIndex = 0;
+    if(right-> numberOfKeys > mkeys / 2){
 
-                }else{
+      left-> data[left-> numberOfKeys].key = center-> key;
+      left-> numberOfKeys++;
+      center-> key = right-> data[0].key;
 
+      for(i = 1; i < right-> numberOfKeys; i++)
+        right-> data[i - 1] = right-> data[i];
 
-                  for( i = 0; i < q-> numberOfKeys; i++)
-                    if(q-> data[i].left == p || q-> data[i].right == p)
-                      break;
-
-                    left = q-> data[i].left;
-                    right = q-> data[i].right;
-                    center =& (q-> data[i]);
-                    middleIndex = i;
-                  }
-
-                  if(right-> numberOfKeys > mkeys / 2){
-
-                    left-> data[left-> numberOfKeys].key = center-> key;
-                    left-> numberOfKeys++;
-                    center-> key = right-> data[0].key;
-
-                    for(i = 1; i < right-> numberOfKeys; i++)
-                      right->data[i-1]=right->data[i];
-
-                    right-> numberOfKeys--;
-                    return;
-                  }
+      right-> numberOfKeys--;
+      break;
+    }
 
     //merge left and right
-                  else{
+    else{
 
-                    left-> data[left-> numberOfKeys].key = center-> key;
-                    left -> numberOfKeys++;
+      left-> data[left-> numberOfKeys].key = center-> key;
+      left -> numberOfKeys++;
 
-                    for(j = 0; j < right-> numberOfKeys; j++)
-                      left-> data[left-> numberOfKeys + j] = right-> data[j];
+      for(j = 0; j < right-> numberOfKeys; j++)
+        left-> data[left-> numberOfKeys + j] = right-> data[j];
 
-                    left-> numberOfKeys += right-> numberOfKeys;
+      left-> numberOfKeys += right-> numberOfKeys;
 
       //delete record from parent
-                    for(i = middleIndex + 1; i < q-> numberOfKeys; i++)
-                      q-> data[i - 1] = q-> data[i];
+      for(i = middleIndex + 1; i < q-> numberOfKeys; i++)
+        q-> data[i - 1] = q-> data[i];
 
-                    q-> numberOfKeys--;
-                    p = q;
-                  }
+      q-> numberOfKeys--;
+      p = q;
+    }
 
 
-                }
+  }
 
-                q = recordPosition;
+  cout << "After is leaf node " << endl  << flush;
 
-                while( !q-> isLeaf){
+  //ERROR
+  q = recordPosition; //record position is a node
+  cout << "0" << endl  << flush;
+  cout << "\nisLeaf is " << q-> isLeaf << flush;
+  while( !q-> isLeaf){
+  cout << "1" << endl  << flush;
 
-                  for( i = 0; i < q-> numberOfKeys; i++){
+    for( i = 0; i < q-> numberOfKeys; i++){
+  cout << "2" << endl  << flush;
+      if(q-> data[i].key == value){
+          cout << "3" << endl  << flush;
+        for( i = i + 1; i < q-> numberOfKeys; i++){
+          q-> data[i - 1] = q-> data[i];
 
-                    if(q-> data[i].key == value){
+            cout << "4" << endl  << flush;
+          }
+        q-> numberOfKeys--;
+          cout << "5" << endl  << flush;
+        break;
+      }
 
-                      for( i = i + 1; i < q-> numberOfKeys; i++)
-                        q-> data[i - 1] = q-> data[i];
-                      q-> numberOfKeys--;
-                      break;
-                    }
+    }
+    if(i == q-> numberOfKeys){
+      cout << "6" << endl  << flush;
+    break;
+    }
+  }
 
-                  }
-                  if(i == q-> numberOfKeys)
-                    break;
-                }
+  ///////////////////////////////////////////
 
-                p = q;
+  cout << "1" << endl  << flush;
 
-                while( !p-> isLeaf){
+  p = q;
 
-                  if(p-> numberOfKeys >= mkeys / 2 )
-                    return;
+  while( !p-> isLeaf){
 
-                  if(p == root ){
+    if(p-> numberOfKeys >= mkeys / 2 )
+      break;
 
-                    if(p-> numberOfKeys > 0)
-                      return;
-                    else{
+    if(p == root ){
 
-                      root = p-> first;
-                      return;
-                    }
-                  }
+      if(p-> numberOfKeys > 0)
+        break;
+      else{
 
-                  q = p-> parent;
-                  if(q-> data[0].left == p || q-> data[0].right == p){
+        root = p-> first;
+        break;
+      }
+    }
 
-                    left = q-> data[0].left;
-                    right = q-> data[0].right;
-                    center =& (q-> data[0]);
-                    middleIndex = 0;
+    q = p-> parent;
+    if(q-> data[0].left == p || q-> data[0].right == p){
 
-                  }else{
+      left = q-> data[0].left;
+      right = q-> data[0].right;
+      center =& (q-> data[0]);
+      middleIndex = 0;
 
-                    for( i = 1; i < q-> numberOfKeys; i++)
-                      if(q->data[i].right==p)
-                        break;
+    }else{
 
-                      left = q-> data[i - 1].left;
-                      right = q-> data[i].right;
-                      center =& (q-> data[i]);
-                      middleIndex = i;
-                    }
+      for( i = 1; i < q-> numberOfKeys; i++)
+        if(q-> data[i].right == p)
+          break;
+
+      left = q-> data[i - 1].left;
+      right = q-> data[i].right;
+      center =& (q-> data[i]);
+      middleIndex = i;
+    }
 
 
     //left has an extra key
-                    if(left-> numberOfKeys > mkeys / 2){
+    if(left-> numberOfKeys > mkeys / 2){
 
-                      for(i = right-> numberOfKeys - 1; i >= 0; i--)
-                        right-> data[i + 1] = right-> data[i];
+      for(i = right-> numberOfKeys - 1; i >= 0; i--)
+        right-> data[i + 1] = right-> data[i];
 
-                      right-> numberOfKeys++;
-                      right-> data[0].key = center-> key;
-                      center-> key = left-> data[left-> numberOfKeys - 1].key;
-                      left-> numberOfKeys--;
-                      return;
-                    }
+      right-> numberOfKeys++;
+      right-> data[0].key = center-> key;
+      center-> key = left-> data[left-> numberOfKeys - 1].key;
+      left-> numberOfKeys--;
+
+      cout << "left has an extra key" << endl  << flush;
+      break;
+
+    }
+
 
     //right has an extra key
-                    else
+    else
 
-                      if(right-> numberOfKeys > mkeys / 2){
+    if(right-> numberOfKeys > mkeys / 2){
 
-                        left-> data[left-> numberOfKeys].key = center-> key;
-                        left-> numberOfKeys++;
-                        center-> key = right-> data[0].key;
+      left-> data[left-> numberOfKeys].key = center-> key;
+      left-> numberOfKeys++;
+      center-> key = right-> data[0].key;
 
-                        for(i = 1; i < right-> numberOfKeys; i++)
-                          right-> data[i - 1] = right-> data[i];
+      for(i = 1; i < right-> numberOfKeys; i++)
+        right-> data[i - 1] = right-> data[i];
 
-                        right-> numberOfKeys--;
-                        return;
-                      }
+      right-> numberOfKeys--;
+
+      cout << "right has an extra key" << endl  << flush;
+
+
+      break;
+    }
+
+
 
     //merge left and right
-                      else{
+    else{
 
-                        left-> data[left-> numberOfKeys].key = center-> key;
-                        left-> numberOfKeys++;
+      left-> data[left-> numberOfKeys].key = center-> key;
+      left-> numberOfKeys++;
 
-                        for(j = 0; j < right-> numberOfKeys; j++)
-                          left-> data[left-> numberOfKeys + j] = right-> data[j];
+      for(j = 0; j < right-> numberOfKeys; j++)
+        left-> data[left-> numberOfKeys + j] = right-> data[j];
 
-                        left-> numberOfKeys += right-> numberOfKeys;
+      left-> numberOfKeys += right-> numberOfKeys;
 
       //delete the record from the parent
-                        for(i = middleIndex + 1; i < q-> numberOfKeys ; i++)
-                          q-> data[i - 1] = q-> data[i];
-                        q-> numberOfKeys--;
-                        p = q;
-                      }
+      for(i = middleIndex + 1; i < q-> numberOfKeys ; i++)
+        q-> data[i - 1] = q-> data[i];
 
-                    }
+      q-> numberOfKeys--;
+      p = q;
+
+       cout << "delete parent record" << endl  << flush;
+    }
+
+     cout << "merge left and right" << endl  << flush;
+
+  }
+
+   cout << "end while p !isLeaf" << endl  << flush;
 
 
-                  }
+}
 
 
-          
+bool search(int value)
+{
+  Queue q1,
+        q2;
+
+  node *present;
+
+  int i;
+  q1.enque(root);
+  while(!q1.empty())
+  {
+    q2.makeEmpty();
+    cout<<"\n";
+    while(!q1.empty())
+    {
+
+      present=q1.deque();
+      if(present->isLeaf){
+
+        for(i=0;i<present->numberOfKeys;i++){
+          if(present->data[i].key==value )
+          {
+
+            position = present;
+            return true ;
+          }
+        }
+
+      }
+      if(!present->isLeaf)
+      {
+        q2.enque(present->data[0].left);
+        for(int i=0;i<present->numberOfKeys;i++){
+          if(present->data[i].key == value)
+          recordPosition = present;
+          q2.enque(present->data[i].right);
+        }
+
+      }
+    }
+    q1=q2;
+  }
+  return false;
+}
+
 
   };
